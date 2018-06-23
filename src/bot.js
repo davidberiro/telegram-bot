@@ -2,7 +2,7 @@ const token = process.env.TOKEN;
 
 const Bot = require('node-telegram-bot-api');
 
-import { WELCOME_MESSAGE } from './consts'
+import { WELCOME_MESSAGE, INITIAL_KEYBOARD } from './consts'
 
 let bot;
 
@@ -20,6 +20,11 @@ bot.onText(/\/start/, (msg) => {
   const name = msg.from.first_name;
   bot.sendMessage(msg.chat.id, `Hello there ${name}! ${WELCOME_MESSAGE}`);
   
+  bot.sendMessage(msg.chat.id, "Welcome", {
+    "reply_markup": {
+        "keyboard": INITIAL_KEYBOARD
+      }
+  });
 });
 
 // bot.on('message', (msg) => {
