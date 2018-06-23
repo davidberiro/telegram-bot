@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.js"],"names":["require","config","bot"],"mappings":";;AAAAA,QAAQ,QAAR,EAAkBC,MAAlB;;AAEA,IAAIC,MAAMF,QAAQ,OAAR,CAAV;AACAA,QAAQ,OAAR,EAAiBE,GAAjB","file":"index.js","sourcesContent":["require(\"dotenv\").config();\n\nvar bot = require('./bot');\nrequire('./web')(bot);\n"]}

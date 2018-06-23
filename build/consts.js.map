@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/consts.js"],"names":["WELCOME_MESSAGE"],"mappings":";;;;;AAAA,IAAMA,kBAAkB,6FAAxB;;QAESA,e,GAAAA,e","file":"consts.js","sourcesContent":["const WELCOME_MESSAGE = \"I'm a telegram bot designed by my owner to help you find weed for the first time in Israel!\"\n\nexport { WELCOME_MESSAGE }"]}

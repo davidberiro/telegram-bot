@@ -1,6 +1,9 @@
 const token = process.env.TOKEN;
 
 const Bot = require('node-telegram-bot-api');
+
+import { WELCOME_MESSAGE } from './consts'
+
 let bot;
 
 if(process.env.NODE_ENV === 'production') {
@@ -13,11 +16,17 @@ else {
 
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
-bot.on('message', (msg) => {
+bot.onText(/\/start/, (msg) => {
   const name = msg.from.first_name;
-  bot.sendMessage(msg.chat.id, 'Hello, ' + name + '!').then(() => {
-    // reply sent!
-  });
+  bot.sendMessage(msg.chat.id, `Hello there ${name}! ${WELCOME_MESSAGE}`);
+  
 });
+
+// bot.on('message', (msg) => {
+//   const name = msg.from.first_name;
+//   bot.sendMessage(msg.chat.id, 'Hello, ' + name + '!').then(() => {
+//     console.log("I said hello!")
+//   });
+// });
 
 module.exports = bot;
